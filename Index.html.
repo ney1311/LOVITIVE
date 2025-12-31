@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pour Toi ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff5f7; /* Blanc rosé très doux */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+
+        #message-container {
+            height: 120px;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 30px;
+            color: #d88a8a;
+            font-size: 1.4rem;
+            font-weight: 500;
+            max-width: 80%;
+            transition: opacity 0.5s ease;
+        }
+
+        .heart-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            transition: transform 0.3s ease;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        .heart-button:active {
+            transform: scale(0.8);
+        }
+
+        .heart-icon {
+            fill: #ffb6c1; /* Rose pâle */
+            width: 150px;
+            height: 150px;
+            filter: drop-shadow(0 5px 15px rgba(255, 182, 193, 0.4));
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.1); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+
+        .fade-in {
+            opacity: 1;
+        }
+
+        .fade-out {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="message-container">LOVITIVE</div>
+
+    <button class="heart-button" onclick="displayMessage()">
+        <svg class="heart-icon" viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+    </button>
+
+    <script>
+        const messages = [
+            "Même si je ne suis pas à côté de toi, n’oublie pas que je suis là pour toi",
+            "Tu es peut-être loin de mes yeux mais tu es proche de mon cœur",
+            "Si tu tombes je te rattraperai peu importe où je suis",
+            "Tu es ma personne préférée dans le monde entier",
+            "Juste un petit mot pour te dire que tu es mon plus beau cadeau",
+            "Je t’aime un peu plus à chaque seconde qui passe",
+            "Tu es parfaite ne l’oublie pas !",
+            "Toi et moi c’est une évidence",
+            "Mon endroit préféré au monde ? C’est dans tes bras",
+            "Chaque jour tu es la plus belle pensée de ma journée",
+            "Tu es ma priorité, aujourd’hui, demain et pour toujours",
+            "N’oublie jamais à quel point tu es précieuse pour moi",
+            "Je suis fier de toi, fier de la personne que tu es et que tu deviens",
+            "Tout ira bien tant qu’on sera à deux",
+            "Aussi longtemps que je serai sur terre il y aura quelqu’un pour t’aimer plus que tout",
+            "Je t’aime plus que les mots ne pourront jamais l’expliquer",
+            "Je suis avec toi",
+            "Je suis ton plus grand fan",
+            "Tu es incroyable !",
+            "Tu es exceptionnelle !",
+            "Peu importe quand tu vois ça sache que je pense à toi",
+            "Tu es toute ma vie"
+        ];
+
+        function displayMessage() {
+            const container = document.getElementById('message-container');
+            
+            // Effet de transition
+            container.style.opacity = 0;
+            
+            setTimeout(() => {
+                const randomIndex = Math.floor(Math.random() * messages.length);
+                container.innerText = messages[randomIndex];
+                container.style.opacity = 1;
+            }, 300);
+        }
+    </script>
+</body>
+</html>
